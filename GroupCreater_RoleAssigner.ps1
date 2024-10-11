@@ -114,22 +114,6 @@ Start-Sleep -Seconds 3
 ###############################################################
 
 Write-Host "Assigning PIM roles for Tier1"
-$params = @{
-  "PrincipalId" = $varLevelOneSupport.Id
-  "RoleDefinitionId" = $roleDefinition_HelpDeskAdmin.Id
-  "Justification" = "Add eligible assignment"
-  "DirectoryScopeId" = "/"
-  "Action" = "AdminAssign"
-  "ScheduleInfo" = @{
-    "StartDateTime" = Get-Date
-    "Expiration" = @{
-      "Type" = "noExpiration"
-      #"Duration" = "PT10H"
-      }
-    }
-   }
-New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -BodyParameter $params | 
-  Format-List Id, Status, Action, AppScopeId, DirectoryScopeId, RoleDefinitionId, IsValidationOnly, Justification, PrincipalId, CompletedDateTime, CreatedDateTime
 
 $params = @{
   "PrincipalId" = $varLevelOneSupport.Id
