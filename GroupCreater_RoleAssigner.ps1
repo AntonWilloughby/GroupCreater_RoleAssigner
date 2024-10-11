@@ -129,7 +129,7 @@ $params = @{
       }
     }
    }
-New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -BodyParameter $params | 
+   New-MgRoleManagementDirectoryRoleEligibilityScheduleRequest -BodyParameter $params | 
   Format-List Id, Status, Action, AppScopeId, DirectoryScopeId, RoleDefinitionId, IsValidationOnly, Justification, PrincipalId, CompletedDateTime, CreatedDateTime
 
 $params = @{
